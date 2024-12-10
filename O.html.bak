@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱丽丝 sever hub</title>
+    <style>
+    .lightbox{
+         display:flex;
+         justify-content:center;
+         align-items:center;
+         height:100vh;
+    }
+    @font-face {
+    font-family: 'yuanshen'; /* 字体名称，可自定义 */
+    src: url('fonts/yuanshen.ttf') format('truetype'); /* 引入字体文件 */
+}
+    .center-text{
+        text-align:center;/*文本水平居中*/
+    }
+        body {
+            margin: 0;
+            font-family: yuanshen, sans-serif;
+            background-image: url('爱丽丝.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        /* 内容样式 */
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-top: 20%;
+        }
+
+        p1 {
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        /* 导航栏样式 */
+        nav {
+            background-color: #356;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            flex: 1;
+        }
+
+        nav ul li a {
+            display: block;
+            color: pink;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.1s; /* 添加过渡效果 */
+        }
+
+        nav ul li a:hover {
+            background-color: #916352;
+        }
+
+        nav ul li a:active {
+            transform: scale(0.95); /* 点击时缩小 */
+            background-color: #6d4639; /* 点击时改变背景色 */
+        }
+
+        /* 子菜单的样式 */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            flex: none;
+        }
+
+        nav ul li ul li a {
+            color: white;
+            padding: 10px 14px;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #575757;
+        }
+
+        /* 点击反馈显示样式 */
+        #feedback {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0.9, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none; /* 默认隐藏 */
+            font-size: 1em;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- 点击反馈 -->
+    <div id="feedback">now loanding...</div>
+
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="O.html" onclick="showFeedback()">首页</a></li>
+            <li><a href="#about" onclick="showFeedback()">关于我们</a></li>
+            <li><a href="#services" onclick="showFeedback()">服务器简介</a></li>
+            <li><a href="子页/群.html" onclick="showFeedback()">加入群聊</a></li>
+            <li>
+                <a href="#">下载游戏</a>
+                <ul>
+                    <li><a href="https://mc.163.com/m/" onclick="showFeedback()">网易版</a></li>
+                    <li><a href="https://www.123684.com/s/35GVjv-R6jB3" onclick="showFeedback()">基岩版</a></li>
+                    <li><a href="#option3" onclick="showFeedback()">Java版</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 内容部分 -->
+    <div id="home" class="lightbox">
+        <h1 style="color:pink; font-size:1em; " class="center-text">welcome to alis sever<br>欢迎来到爱丽丝服务器</h1>
+        </div>
+
+    <script>
+        // 显示点击反馈
+        function showFeedback() {
+            const feedback = document.getElementById('feedback');
+            feedback.style.display = 'block'; // 显示反馈信息
+            setTimeout(() => {
+                feedback.style.display = 'none'; // 2秒后隐藏反馈信息
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
